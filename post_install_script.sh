@@ -3,13 +3,7 @@
 # 
 # Sources used:
 #	http://askubuntu.com/questions/47404/how-do-i-make-post-install-scripts#comment53607_47406
-#	a
-
-
-
-touch post_install_script
-sudo 775 post_install_script
-gedit post_install_script
+#
 
 ## enable sources, add PPAs, and update sources:
 ## enabling all repositories, refreshing software list
@@ -21,10 +15,20 @@ sudo apt-get -y --force-yes upgrade
 
 ## adding software and some dependencies from USC:
 sudo apt-get -y install git-all sublime-text-installer texlive gdebi-core libxss1 libappindicator1 libindicator7
+
+# installing google-chrome
 sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome*.deb
+
+# installing remarkable (markdown editor)
 sudo wget https://remarkableapp.github.io/files/remarkable_1.62_all.deb
-sudo gdebi remarkable_1.62_all.deb
+sudo gdebi --non-interactive remarkable_1.62_all.deb
+
+#remove amazon
+sudo rm -rf /usr/share/applications/ubuntu-amazon-default.desktop 
+
+#add and remove programs from Unity Launcher
+gsettings set com.canonical.Unity.Launcher favorites "['application://ubiquity.desktop', 'application://nautilus.desktop', 'application://google-chrome.desktop', 'application://sublime-text.desktop', 'application://terminal.desktop', 'application://remarkable.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']"
 
 # list of apps:
 # sublime-text
