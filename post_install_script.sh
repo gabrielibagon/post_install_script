@@ -28,7 +28,11 @@ sudo gdebi --non-interactive remarkable_1.62_all.deb
 sudo rm -rf /usr/share/applications/ubuntu-amazon-default.desktop 
 
 #add and remove programs from Unity Launcher
-gsettings set com.canonical.Unity.Launcher favorites "['application://ubiquity.desktop', 'application://nautilus.desktop', 'application://google-chrome.desktop', 'application://sublime-text.desktop', 'application://terminal.desktop', 'application://remarkable.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']"
+gsettings set com.canonical.Unity.Launcher favorites "['application://ubiquity.desktop', 'application://nautilus.desktop', 'application://google-chrome.desktop', 'application://sublime-text.desktop', 'application://gnome-terminal.desktop', 'application://remarkable.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']"
+
+#set up git
+git config --global user.name "gabrielibagon"
+git config --global user.email "gabriel.ibagon@gmail.com"
 
 # list of apps:
 # sublime-text
