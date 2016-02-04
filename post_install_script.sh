@@ -24,7 +24,7 @@ sudo dpkg -i google-chrome*.deb
 sudo wget https://remarkableapp.github.io/files/remarkable_1.62_all.deb
 sudo gdebi --non-interactive remarkable_1.62_all.deb
 
-#remove amazon
+#remove applications
 sudo rm -rf /usr/share/applications/ubuntu-amazon-default.desktop 
 
 #add and remove programs from Unity Launcher
