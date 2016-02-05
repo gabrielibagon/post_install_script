@@ -16,6 +16,6 @@ then
 	sudo easy_install pip;
 fi
 sudo git clone https://github.com/OpenBCI/OpenBCI_Python.git ~/OpenBCI
-sudo sed "1d" ~/OpenBCI_Python/requirements.txt
-sudo pip install -r ~/OpenBCI_Python/requirements.txt 
+sudo sed "1d" ~/OpenBCI/OpenBCI_Python/requirements.txt
+sudo pip install -r ~/OpenBCI/OpenBCI_Python/requirements.txt 
 sudo apt-get install python-numpy
