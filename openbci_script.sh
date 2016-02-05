@@ -2,7 +2,7 @@
 mkdir ~/OpenBCI
 #install the GUI
 sudo wget -P ~/OpenBCI http://openbci.com//apps/application.linux64.zip
-sudo unzip ~/OpenBCI/application.linux64.zip -d "~/OpenBCI"
+sudo unzip ~/OpenBCI/application.linux64.zip -d ~/OpenBCI
 sudo chmod 775 ~/OpenBCI/application.linux64.zip/OpenBCI_GUI
 
 ###install the python API and dependencies
