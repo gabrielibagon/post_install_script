@@ -17,4 +17,4 @@ then
 fi
 
 sudo git clone https://github.com/OpenBCI/OpenBCI_Python.git
-pip install -r OpenBCI_Python/requirements.txt 
+sudo pip install -r OpenBCI_Python/requirements.txt 
