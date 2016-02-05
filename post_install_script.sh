@@ -9,12 +9,23 @@
 ## enabling all repositories, refreshing software list
 sudo sed 's/# deb/deb/' -i /etc/apt/sources.lsit
 
+#sublime ppa
 sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
+#java 1.8 ppa
+sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get -y --force-yes update
 sudo apt-get -y --force-yes upgrade
 
 ## adding software and some dependencies from USC:
-sudo apt-get -y install git-all sublime-text-installer texlive gdebi-core libxss1 libappindicator1 libindicator7
+# List of programs
+#	Java Runtime Environment
+#	Java Development Kit
+#	Sublime Text 3
+#	TexLive
+#	GDebi
+#	
+#
+sudo apt-get -y install git-all default-jre default-jdk oracle-java8-installer sublime-text-installer texlive gdebi-core libxss1 libappindicator1 libindicator7
 
 # installing google-chrome
 sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -33,6 +44,18 @@ gsettings set com.canonical.Unity.Launcher favorites "['application://ubiquity.d
 #set up git
 git config --global user.name "gabrielibagon"
 git config --global user.email "gabriel.ibagon@gmail.com"
+
+
+#openBCI setup
+mkdir OpenBCI
+#install the GUI
+sudo wget http://openbci.com//apps/application.linux64.zip /OpenBCI
+unzip OpenBCI/application.linux64.zip
+sudo chmod 777 /application.linux64.zip/OpenBCI_GUI
+
+#install the python API and dependencies
+sudo git clone https://github.com/OpenBCI/OpenBCI_Python.git /OpenBCI
+
 
 # list of apps:
 # sublime-text
