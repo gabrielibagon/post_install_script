@@ -15,7 +15,7 @@ if [ $(sudo dpkg-query -W -f='${Status}' pip 2>/dev/null | grep -c "ok installed
 then
 	sudo easy_install pip;
 fi
-sudo git clone https://github.com/OpenBCI/OpenBCI_Python.git ~/OpenBCI
+sudo git clone https://github.com/OpenBCI/OpenBCI_Python.git ~/OpenBCI/OpenBCI_Python
 sudo sed "1d" ~/OpenBCI/OpenBCI_Python/requirements.txt
 sudo pip install -r ~/OpenBCI/OpenBCI_Python/requirements.txt 
 sudo apt-get install python-numpy
