@@ -45,14 +45,12 @@ gsettings set com.canonical.Unity.Launcher favorites "['application://ubiquity.d
 git config --global user.name "gabrielibagon"
 git config --global user.email "gabriel.ibagon@gmail.com"
 
-
 #openBCI setup
-mkdir OpenBCI
-cd OpenBCI
+mkdir ~/OpenBCI
 #install the GUI
-sudo wget http://openbci.com//apps/application.linux64.zip
-unzip application.linux64.zip
-sudo chmod 775 /application.linux64.zip/OpenBCI_GUI
+sudo wget -P ~/OpenBCI http://openbci.com//apps/application.linux64.zip
+sudo unzip ~/OpenBCI/application.linux64.zip -d ~/OpenBCI
+sudo chmod 775 ~/OpenBCI/application.linux64.zip/OpenBCI_GUI
 
 ###install the python API and dependencies
 
@@ -64,10 +62,10 @@ if [ $(sudo dpkg-query -W -f='${Status}' pip 2>/dev/null | grep -c "ok installed
 then
 	sudo easy_install pip;
 fi
-
-sudo git clone https://github.com/OpenBCI/OpenBCI_Python.git
-pip install -r OpenBCI_Python/requirements.txt 
-
+sudo git clone https://github.com/OpenBCI/OpenBCI_Python.git ~/OpenBCI/OpenBCI_Python
+sudo sed "1d" ~/OpenBCI/OpenBCI_Python/requirements.txt
+sudo pip install -r ~/OpenBCI/OpenBCI_Python/requirements.txt 
+sudo apt-get install python-numpy
 
 # list of apps:
 # sublime-text
