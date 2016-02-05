@@ -48,13 +48,23 @@ git config --global user.email "gabriel.ibagon@gmail.com"
 
 #openBCI setup
 mkdir OpenBCI
+cd OpenBCI
 #install the GUI
-sudo wget http://openbci.com//apps/application.linux64.zip /OpenBCI
-unzip OpenBCI/application.linux64.zip
-sudo chmod 777 /application.linux64.zip/OpenBCI_GUI
+sudo wget http://openbci.com//apps/application.linux64.zip
+unzip application.linux64.zip
+sudo chmod 775 /application.linux64.zip/OpenBCI_GUI
 
-#install the python API and dependencies
-sudo git clone https://github.com/OpenBCI/OpenBCI_Python.git /OpenBCI
+##install the python API and dependencies
+# check if pip is installed, if not -> install
+sudo command -v pip >/dev/null 2>&1 || {}
+sudo apt-get -y install python-setuptools python-dev build-essential 
+
+if [ $(sudo dpkg-query -W -f='${Status}' pip 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+	sudo easy_install pip;
+fi
+
+sudo git clone https://github.com/OpenBCI/OpenBCI_Python.git
 
 
 # list of apps:
