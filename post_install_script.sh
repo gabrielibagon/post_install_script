@@ -25,7 +25,7 @@ sudo apt-get -y --force-yes upgrade
 #	GDebi
 #	
 #
-sudo apt-get -y install git-all default-jre default-jdk oracle-java8-installer sublime-text-installer texlive gdebi-core libxss1 libappindicator1 libindicator7
+sudo apt-get -y install git-all default-jre default-jdk oracle-java8-installer sublime-text-installer python-numpy texlive gdebi-core libxss1 libappindicator1 libindicator7
 
 # installing google-chrome
 sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -65,7 +65,6 @@ fi
 sudo git clone https://github.com/OpenBCI/OpenBCI_Python.git ~/OpenBCI/OpenBCI_Python
 sudo sed "1d" ~/OpenBCI/OpenBCI_Python/requirements.txt
 sudo pip install -r ~/OpenBCI/OpenBCI_Python/requirements.txt 
-sudo apt-get install python-numpy
 
 # list of apps:
 # sublime-text
