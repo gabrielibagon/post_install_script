@@ -7,7 +7,7 @@
 
 ## enable sources, add PPAs, and update sources:
 ## enabling all repositories, refreshing software list
-sudo sed 's/# deb/deb/' -i /etc/apt/sources.lsit
+sudo sed 's/# deb/deb/' -i /etc/apt/sources.list
 
 #sublime ppa
 sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
