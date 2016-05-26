@@ -13,6 +13,10 @@ sudo sed 's/# deb/deb/' -i /etc/apt/sources.list
 sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
 #java 1.8 ppa
 sudo add-apt-repository ppa:webupd8team/java
+#spotify
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
+echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+
 sudo apt-get -y --force-yes update
 sudo apt-get -y --force-yes upgrade
 
@@ -23,9 +27,9 @@ sudo apt-get -y --force-yes upgrade
 #	Sublime Text 3
 #	TexLive
 #	GDebi
-#	
+#	spotify client
 #
-sudo apt-get -y install git-all default-jre default-jdk oracle-java8-installer sublime-text-installer python-numpy texlive gdebi-core libxss1 libappindicator1 libindicator7
+sudo apt-get -y install git-all default-jre default-jdk oracle-java8-installer sublime-text-installer spotify-client python-numpy texlive gdebi-core libxss1 libappindicator1 libindicator7
 
 # installing google-chrome
 sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -39,8 +43,7 @@ sudo gdebi --non-interactive remarkable_1.62_all.deb
 sudo rm -rf /usr/share/applications/ubuntu-amazon-default.desktop 
 
 #add and remove programs from Unity Launcher
-gsettings set com.canonical.Unity.Launcher favorites "['application://ubiquity.desktop', 'application://nautilus.desktop', 'application://google-chrome.desktop', 'application://sublime-text.desktop', 'application://gnome-terminal.desktop', 'application://remarkable.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']"
-
+gsettings set com.canonical.Unity.Launcher favorites "['application://ubiquity.desktop', 'application://nautilus.desktop', 'application://gnome-terminal.desktop', 'application://google-chrome.desktop', 'application://sublime-text.desktop', 'application://spotify.desktop', 'applcation://puredata.desktop','application://remarkable.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']"
 #set up git
 git config --global user.name "gabrielibagon"
 git config --global user.email "gabriel.ibagon@gmail.com"
